@@ -3,7 +3,17 @@ entries:
   thanosql-engine:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-09-20T17:35:22.641817275+09:00"
+    created: "2022-09-20T17:37:01.136299236+09:00"
+    description: A Helm chart for Kubernetes
+    digest: 632d76b2a85878056fa782a55e2ac406b064566a03bb8d8de953ca22816654ff
+    name: thanosql-engine
+    type: application
+    urls:
+    - thanosql-engine-0.2.tgz
+    version: "0.2"
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-20T17:37:01.135952099+09:00"
     description: A Helm chart for Kubernetes
     digest: 6d4657a6d2f599931854d4343e49e0fe0b49af3affdec6f99fb9fadca3ff15c0
     name: thanosql-engine
@@ -11,4 +21,4 @@ entries:
     urls:
     - thanosql-engine-0.1.0.tgz
     version: 0.1.0
-generated: "2022-09-20T17:35:22.641385413+09:00"
+generated: "2022-09-20T17:37:01.135530377+09:00"
