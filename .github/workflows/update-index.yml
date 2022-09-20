@@ -20,8 +20,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "Dada Ahn"
-          git config user.email "dadanuna@gmail.com"
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "smartmind@smartmind.team"
 
       - name: Install Helm
         uses: azure/setup-helm@v1
