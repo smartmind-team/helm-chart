@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  thanosql-engine:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-21T01:06:55.004847529Z"
+    description: A Helm chart for Kubernetes
+    digest: 54de678c84052a45b7e99ecea2aa36224337cc73ecaf5d8eb1ba6ddc83aec60a
+    name: thanosql-engine
+    type: application
+    urls:
+    - https://github.com/smartmind-team/helm-chart/releases/download/thanosql-engine-0.1.1/thanosql-engine-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-09-21T01:06:55.004858229Z"
