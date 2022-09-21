@@ -3,12 +3,12 @@ entries:
   thanosql-engine:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-09-21T01:06:55.004847529Z"
+    created: "2022-09-21T02:15:23.319052144Z"
     description: A Helm chart for Kubernetes
-    digest: 54de678c84052a45b7e99ecea2aa36224337cc73ecaf5d8eb1ba6ddc83aec60a
+    digest: 8b1c0f80fca88949ce01cb7e798cf4904e7249975dd340919e7d6bfd0df57d4a
     name: thanosql-engine
     type: application
     urls:
-    - https://github.com/smartmind-team/helm-chart/releases/download/thanosql-engine-0.1.1/thanosql-engine-0.1.1.tgz
+    - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/thanosql-engine-0.1.1.tgz
     version: 0.1.1
-generated: "2022-09-21T01:06:55.004858229Z"
+generated: "2022-09-21T02:15:23.31778765Z"
