@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "thanosql-engine.fullname" . }}
+  labels:
+    {{- include "thanosql-engine.labels" . | nindent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+  selector:
+    {{- include "thanosql-engine.selectorLabels" . | nindent 4 }}
+  type: LoadBalancer
+  loadBalancerIP: {{ .Values.service.loadBalancerIP }}
+  clusterIP: {{ .Values.service.clusterIP }}
