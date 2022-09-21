@@ -1,0 +1,27 @@
+# Default values for engine.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 
+
+image:
+  repository:
+  pullPolicy: 
+  tag: 
+  port: 
+  command: |
+
+imagePullSecrets:
+
+service:
+  type: ClusterIP
+  port: 
+  loadBalancerIP:
+  clusterIP:
+
+resources:
+configmap:
+  data:
+  
+volumes: []
+volumeMounts: []
