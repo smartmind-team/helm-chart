@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ include "ecr-secret.fullname" . }}
+rules:
+- apiGroups: [""]
+  resources: ["secrets"]
+  resourceNames: [{{ include "ecr-secret.fullname" . }}]
+  verbs: ["delete"]
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["create"]

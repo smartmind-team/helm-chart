@@ -1,0 +1,12 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name:  {{ include "ecr-secret.fullname" . }}
+subjects:
+- kind: ServiceAccount
+  name:  {{ include "ecr-secret.fullname" . }}
+  apiGroup: ""
+roleRef:
+  kind: Role
+  name:  {{ include "ecr-secret.fullname" . }}
+  apiGroup: ""
