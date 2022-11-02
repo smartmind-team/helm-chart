@@ -1,6 +1,6 @@
 apiVersion: v2
 name: thanosql-engine
-description: A Helm Chart for thanoSQL-engine
+description: A Helm Chart for ThanoSQL Engine
 
 # A chart can be either an 'application' or a 'library' chart.
 #
