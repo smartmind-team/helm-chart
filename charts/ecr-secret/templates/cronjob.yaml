@@ -1,0 +1,36 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "ecr-secret.fullname" . }}
+spec:
+  schedule: "{{ .Values.cronjob.schedule }}"
+  successfulJobsHistoryLimit: 3
+  suspend: false
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: {{ include "ecr-secret.fullname" . }}
+          containers:
+          - name: ecr-registry-helper
+            image: odaniait/aws-kubectl:latest
+            imagePullPolicy: IfNotPresent
+            envFrom:
+              - secretRef:
+                  name: {{ include "ecr-secret.fullname" . }}
+              - configMapRef:
+                  name: {{ include "ecr-secret.fullname" . }}
+            command:
+              - /bin/sh
+              - -c
+              - |-
+                ECR_TOKEN=`aws ecr get-login-password --region ${AWS_REGION}`
+                NAMESPACE_NAME='{{ .Release.Namespace }}'
+                kubectl delete secret --ignore-not-found $DOCKER_SECRET_NAME -n $NAMESPACE_NAME
+                kubectl create secret docker-registry $DOCKER_SECRET_NAME \
+                --docker-server=https://${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com \
+                --docker-username=AWS \
+                --docker-password="${ECR_TOKEN}" \
+                --namespace=$NAMESPACE_NAME
+                echo "Secret was successfully updated at $(date)"
+          restartPolicy: Never
