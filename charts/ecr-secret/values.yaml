@@ -2,11 +2,22 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# secret:
+#   stringData:
+#     AWS_SECRET_ACCESS_KEY: ""
+#     AWS_ACCESS_KEY_ID: ""
+#     AWS_ACCOUNT: ""
 secret:
   stringData:
 
+# configmap:
+#   data:
+#     AWS_REGION: ""
+#     DOCKER_SECRET_NAME: ""
 configmap:
   data:
     
+# the schedule refers to the cron syntax 
+# ex: "* */10 * * *" -> At every minute past every 10th hour
 cronjob:
   schedule: 
