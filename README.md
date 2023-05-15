@@ -9,7 +9,7 @@ This repo also has a github action that runs whenever a release is made. This ac
 ## __Adding New Charts__
 After testing the helm chart on your system and you are certain that it has no errors, create a new branch with the correct version in your `Chart.yaml` and commit. 
 
-Then make a pull request into main. After getting reviewed merge into main. This results in the `github action` running to create a `.tgz` in the gh-pages branch. The github pages then can be used by helm to pull from this private github repository.
+After making a pull request into main create a new release. This results in the `github action` running to create a `.tgz` in the gh-pages branch. The github pages then can be used by helm to pull from this private github repository.
 
 ## __Using the Helm Charts__
 The helm charts are hosted in the gh-pages of this repository. Proceed with the following commands to utilize the helm charts.
