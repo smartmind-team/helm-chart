@@ -1,5 +1,9 @@
 # __Helm-Chart__
-SmartMind Helm Chart Repository
+This repository is a collection of Smartmind's Helm charts. Currently there are two helm charts in this repository: `ecr-secrets` and `thanosql-engine`. 
+- __ecr-secrets__: The ecr-secrets is a helm-chart that hosts a cron task that authenticates the aws-cli using appropriate AWS credentials. The reason behind this is to make sure that the kubernetes pods are able to pull private images without the developer needing to manually create a secret every 12 hours. 
+- __thanosql-engine__: This Helm chart builds the [ThanoSQL-Engine](https://github.com/smartmind-team/thanosql-engine) as a Kubernetes `deployment` using appropriate configurations using the values provided.
+
+This repo also has a github action that runs whenever a release is made. This action automatically builds the helm charts and hosts them privately using Smartmind's github user content. The details of adding and using the helm charts are listed below. 
 
 
 ## __Adding New Charts__
