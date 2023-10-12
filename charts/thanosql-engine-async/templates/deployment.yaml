@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "thanosql-engine-async.fullname" . }}
+  labels:
+    {{- include "thanosql-engine-async.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "thanosql-engine-async.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "thanosql-engine-async.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: {{ .Values.image.command | indent 4 }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "thanosql-engine-async.fullname" . }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.image.port }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts: 
+            {{- .Values.volumeMounts | toYaml | nindent 12 }}
+        - name: celery
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["celery", "-A", "app.api.api_v1.worker", "worker", "--loglevel=info", "--logfile=logs/celery.log"]
+          envFrom:
+            - configMapRef:
+                name: {{ include "thanosql-engine-async.fullname" . }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts: 
+            {{- .Values.volumeMounts | toYaml | nindent 12 }}
+        - name: redis
+          image: redis:7
+      volumes: 
+        {{- .Values.volumes | toYaml | nindent 8 }}

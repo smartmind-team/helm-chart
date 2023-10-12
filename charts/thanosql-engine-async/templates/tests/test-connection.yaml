@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "thanosql-engine-async.fullname" . }}-test-connection"
+  labels:
+    {{- include "thanosql-engine-async.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "thanosql-engine-async.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
