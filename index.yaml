@@ -3,20 +3,31 @@ entries:
   ecr-secret:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-10-12T07:59:27.69266154Z"
+    created: "2024-03-28T00:16:02.725501537Z"
     description: A Helm chart for Kubernetes
-    digest: c3d7472da2f74bf1073935d956ec350792fa2e7f72b4dff9c39253cab05c46ea
+    digest: 9df22f014154fb7c3605b44f2d2caf7e221895a39bef150d512a6c0529a9ada4
     name: ecr-secret
     type: application
     urls:
     - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/ecr-secret-0.1.0.tgz
     version: 0.1.0
+  file-manager:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-03-28T00:16:02.725974477Z"
+    description: A Helm chart for Kubernetes
+    digest: 6cf494aac1951fdf9af87c3d4cbf26908d49c817a4b183a00157189e50baac6d
+    name: file-manager
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/file-manager-0.1.0.tgz
+    version: 0.1.0
   thanosql-engine:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-10-12T07:59:27.693043244Z"
+    created: "2024-03-28T00:16:02.726491349Z"
     description: A Helm Chart for ThanoSQL Engine
-    digest: db9b9a16e55b2274fe40eacb8c08eb7308094af51885c5a83bbd999cd799a9a4
+    digest: a9b691e7eba9f81d6dca9b1f4db7ec233e4f462ab962f037669d8ca386fec1ec
     name: thanosql-engine
     type: application
     urls:
@@ -25,12 +36,12 @@ entries:
   thanosql-engine-async:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-10-12T07:59:27.693365047Z"
+    created: "2024-03-28T00:16:02.72709878Z"
     description: A Helm chart for Kubernetes
-    digest: d2987c8acafda927cce1ba5a58bd5ae962534fd295d81d1e0c5f791c80c5e474
+    digest: 6f1133c5eaf9afd33b33feb440af8b896b9a7bdc53a56899c39b259409bcffd9
     name: thanosql-engine-async
     type: application
     urls:
     - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/thanosql-engine-async-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-12T07:59:27.691969633Z"
+generated: "2024-03-28T00:16:02.724588668Z"
