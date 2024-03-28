@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "file-manager.fullname" . }}
+  labels:
+    {{- include "file-manager.labels" . | nindent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+  selector:
+    {{- include "file-manager.selectorLabels" . | nindent 4 }}
+  type: LoadBalancer
+  loadBalancerIP: {{ .Values.service.loadBalancerIP }}
