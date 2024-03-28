@@ -9,7 +9,6 @@ image:
   pullPolicy: 
   tag: 
   port: 
-  command: |
 
 imagePullSecrets: 
 
