@@ -3,9 +3,9 @@ entries:
   ecr-secret:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:48:36.769790292Z"
+    created: "2024-03-28T00:59:11.072382444Z"
     description: A Helm chart for Kubernetes
-    digest: 399a560c8213943a749eb7c35221c5ccd1b37c703793f67ab347f2f8624676be
+    digest: e4c5bde887f7d29b709f77a43058e05b3cfeea8933283fc27ee5711f108bf85a
     name: ecr-secret
     type: application
     urls:
@@ -14,7 +14,17 @@ entries:
   file-manager:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:48:36.770625676Z"
+    created: "2024-03-28T00:59:11.07390165Z"
+    description: A Helm chart for Kubernetes
+    digest: 912f66d1ce5c9fdd99c1e7cae2648f594179e8ac6b7591778a88bb2f768f54a0
+    name: file-manager
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/file-manager-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-03-28T00:59:11.073453072Z"
     description: A Helm chart for Kubernetes
     digest: 8348bcbb89882b0be10f5c03c5d613cd52a140ab6d3906b95ff937c02f026001
     name: file-manager
@@ -24,7 +34,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:48:36.77020836Z"
+    created: "2024-03-28T00:59:11.072823889Z"
     description: A Helm chart for Kubernetes
     digest: 6cf494aac1951fdf9af87c3d4cbf26908d49c817a4b183a00157189e50baac6d
     name: file-manager
@@ -35,9 +45,9 @@ entries:
   thanosql-engine:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:48:36.771158135Z"
+    created: "2024-03-28T00:59:11.074138172Z"
     description: A Helm Chart for ThanoSQL Engine
-    digest: d3543546eaa95bb9e64af2ed5dd67d3f5d3ea325fc7379f0f044f472dbe526e0
+    digest: 9984b0329c0b638d1d760b2243ff0058b9a6580e8ca218f02815444dc9e736aa
     name: thanosql-engine
     type: application
     urls:
@@ -46,12 +56,12 @@ entries:
   thanosql-engine-async:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:48:36.771506513Z"
+    created: "2024-03-28T00:59:11.074368392Z"
     description: A Helm chart for Kubernetes
-    digest: 6672993e58bbabed0139d11bfceb44192b61f352b2b63e4c1ecf1161df214528
+    digest: 5a9eb0d581369487cee595b0e13cbfa582f6954b085d582c351a4a5bd9904e0b
     name: thanosql-engine-async
     type: application
     urls:
     - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/thanosql-engine-async-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-28T00:48:36.768828623Z"
+generated: "2024-03-28T00:59:11.071379337Z"
