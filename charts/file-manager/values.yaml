@@ -22,4 +22,5 @@ resources:
 configmap: 
   data: 
   
+volumes: []
 volumeMounts: []
