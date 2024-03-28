@@ -1,0 +1,28 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "db-backup.fullname" . }}
+spec:
+  schedule: "{{ .Values.cronjob.schedule }}"
+  successfulJobsHistoryLimit: 3
+  suspend: false
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: {{ include "db-backup.fullname" . }}
+          containers:
+          - name: db-backup-container
+            image: bitnami/kubectl:latest
+            imagePullPolicy: IfNotPresent
+            command: ["/bin/bash", "-c"]
+            args:
+              - |
+                PODS=`kubectl get pods -n thanos --output=json | jq -r '.items[] | select(.metadata.name | startswith("jupyter-")) | .metadata.name'`
+                NAMESPACE_NAME='{{ .Release.Namespace }}'
+                for pod in $PODS; do
+                  kubectl exec -it -n $NAMESPACE_NAME $pod -c postgres -- /bin/bash /run-backup.sh 
+                done
+                echo "backed up all live postgresql servers"
+          restartPolicy: Never
+          hostNetwork: true
