@@ -3,9 +3,9 @@ entries:
   ecr-secret:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:45:13.014613368Z"
+    created: "2024-03-28T00:48:17.702101905Z"
     description: A Helm chart for Kubernetes
-    digest: e90adfd74c301f1fa19d32a1f8492090307bf2fd68540ba8ea489179171b8024
+    digest: d9dae9634a264d5f1789e1acd30fca8a365a168400caf8bc5dc531913bc7ffc7
     name: ecr-secret
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   file-manager:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:45:13.015115498Z"
+    created: "2024-03-28T00:48:17.702658868Z"
     description: A Helm chart for Kubernetes
-    digest: 51f88cbea1c91793169eab7747f365567c574e5ba099418d0d0e44bf5424695e
+    digest: fa5bd0a9aa8e393e88ea610e6a0a7ff3b70c62aefe18dd38052abcfc962fe7bb
     name: file-manager
     type: application
     urls:
@@ -25,9 +25,9 @@ entries:
   thanosql-engine:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:45:13.01566154Z"
+    created: "2024-03-28T00:48:17.703187478Z"
     description: A Helm Chart for ThanoSQL Engine
-    digest: 6bcc6082f1b807bdd4a804c28f317e64d463d361370e78995c648636a8d2495d
+    digest: ddd392131c1277511d0d0de8c4e65da9261f85dc466bb0d038fd94925f096b0c
     name: thanosql-engine
     type: application
     urls:
@@ -36,12 +36,12 @@ entries:
   thanosql-engine-async:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-28T00:45:13.016291891Z"
+    created: "2024-03-28T00:48:17.703806266Z"
     description: A Helm chart for Kubernetes
-    digest: b833022fd843cb7a91db08aa452e918c5435189170f6edd974a900a12583fa74
+    digest: 7c0f13c9d687cc7b675754d6b0a23cfc1ef00968f3446866028d0067cc6e03c0
     name: thanosql-engine-async
     type: application
     urls:
     - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/thanosql-engine-async-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-28T00:45:13.01371716Z"
+generated: "2024-03-28T00:48:17.701058781Z"
