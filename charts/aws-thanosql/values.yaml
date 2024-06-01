@@ -1,0 +1,74 @@
+# Default values for aws-thanosql.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+nodeName:
+storage:
+storageClass:
+certificateArn:
+randomString:
+
+jupyterlab:
+  replicaCount: 
+
+  image:
+    repository: 
+    pullPolicy:
+    tag: 
+    port:
+    command: |
+      
+
+  service:
+    type: LoadBalancer
+    port: 
+  
+  configmap:
+    data:
+
+  resources:
+
+engine:
+  replicaCount: 
+
+  image:
+    repository: 
+    pullPolicy: 
+    tag: 
+    command: |
+
+  service:
+    type: ClusterIP
+    port: 
+
+  resources:
+    limits:
+      cpu: 
+      memory: 
+
+  configmap:
+    data:
+
+api:
+  replicaCount: 
+
+  image:
+    repository: 
+    pullPolicy: 
+    tag: 
+    port: 
+    args: | 
+
+
+  service:
+    type: LoadBalancer
+    port: 
+
+  resources:
+    limits:
+      cpu:
+      memory: 
+      
+  configmap:
+    data:
+      
