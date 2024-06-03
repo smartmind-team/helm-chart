@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "aws-thanosql.fullname" . }}
+  labels:
+    {{- include "aws-thanosql.labels" . | nindent 4 }}
+    app.name: {{ include "aws-thanosql.fullname" . }}-engine
+spec:
+  replicas: {{ .Values.engine.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "aws-thanosql.selectorLabels" . | nindent 6 }}
+      app.name: {{ include "aws-thanosql.fullname" . }}-engine
+  template:
+    metadata:
+      labels:
+        {{- include "aws-thanosql.selectorLabels" . | nindent 8 }}
+        app.name: {{ include "aws-thanosql.fullname" . }}-engine
+    spec:
+      dnsPolicy: Default  
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - {{ .Values.nodeName }}
+      {{- with .Values.engine.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.engine.image.repository }}:{{ .Values.engine.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.engine.image.pullPolicy }}
+          command: {{ .Values.engine.image.command | indent 4 }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "aws-thanosql.fullname" . }}-engine
+          resources:
+            {{- toYaml .Values.engine.resources | nindent 12 }}
+          volumeMounts: 
+            - mountPath: /var/lib/postgresql/data
+              name: {{ include "aws-thanosql.fullname" . }}-volume
+              subPath: data
+            - mountPath: /home/jovyan
+              name: {{ include "aws-thanosql.fullname" . }}-volume
+      volumes: 
+        - name: {{ include "aws-thanosql.fullname" . }}-volume
+          persistentVolumeClaim:
+            claimName: {{ include "aws-thanosql.fullname" . }}-claim

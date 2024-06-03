@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "aws-thanosql.fullname" . }}-lab
+  labels:
+    {{- include "aws-thanosql.labels" . | nindent 4 }}
+    app.name: {{ include "aws-thanosql.fullname" . }}-lab
+spec:
+  replicas: {{ .Values.jupyterlab.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "aws-thanosql.selectorLabels" . | nindent 6 }}
+      app.name: {{ include "aws-thanosql.fullname" . }}-lab
+  template:
+    metadata:
+      labels:
+        {{- include "aws-thanosql.selectorLabels" . | nindent 8 }}
+        app.name: {{ include "aws-thanosql.fullname" . }}-lab
+    spec:
+      dnsPolicy: Default
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - {{ .Values.nodeName }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.jupyterlab.image.repository }}:{{ .Values.jupyterlab.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.jupyterlab.image.pullPolicy }}
+          command: {{ .Values.jupyterlab.image.command | indent 4 }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.jupyterlab.image.port }}
+          resources:
+            {{- toYaml .Values.jupyterlab.resources | nindent 12 }}
+          volumeMounts: 
+            - mountPath: /home/jovyan
+              name: {{ include "aws-thanosql.fullname" . }}-volume
+          envFrom:
+            - configMapRef:
+                name: {{ include "aws-thanosql.fullname" . }}-lab
+      initContainers:
+      - name: init-permissions
+        image: busybox
+        command: ['sh', '-c']
+        args: ['chown 1000 /data']
+        volumeMounts:
+        - name: {{ include "aws-thanosql.fullname" . }}-volume
+          mountPath: /data
+      volumes: 
+        - name: {{ include "aws-thanosql.fullname" . }}-volume
+          persistentVolumeClaim:
+            claimName: {{ include "aws-thanosql.fullname" . }}-claim
