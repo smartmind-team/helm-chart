@@ -18,6 +18,11 @@ spec:
         app.name: {{ include "aws-thanosql.fullname" . }}-api
     
     spec:
+      tolerations:
+      - key: "type"
+        operator: "Equal"
+        value: "workspace"
+        effect: "NoSchedule"
       dnsPolicy: Default
       affinity:
         nodeAffinity:

@@ -17,6 +17,11 @@ spec:
         {{- include "aws-thanosql.selectorLabels" . | nindent 8 }}
         app.name: {{ include "aws-thanosql.fullname" . }}-lab
     spec:
+      tolerations:
+      - key: "type"
+        operator: "Equal"
+        value: "workspace"
+        effect: "NoSchedule"
       dnsPolicy: Default
       securityContext:
         runAsUser: 0
