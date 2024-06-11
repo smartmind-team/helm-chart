@@ -7,6 +7,7 @@ metadata:
     app.name: {{ include "aws-thanosql.fullname" . }}-engine
 spec:
   replicas: {{ .Values.engine.replicaCount }}
+  progressDeadlineSeconds: 1800
   selector:
     matchLabels:
       {{- include "aws-thanosql.selectorLabels" . | nindent 6 }}
@@ -17,6 +18,11 @@ spec:
         {{- include "aws-thanosql.selectorLabels" . | nindent 8 }}
         app.name: {{ include "aws-thanosql.fullname" . }}-engine
     spec:
+      tolerations:
+      - key: "type"
+        operator: "Equal"
+        value: "workspace"
+        effect: "NoSchedule"
       dnsPolicy: Default  
       affinity:
         nodeAffinity:

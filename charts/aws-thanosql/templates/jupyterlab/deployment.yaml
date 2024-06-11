@@ -17,6 +17,11 @@ spec:
         {{- include "aws-thanosql.selectorLabels" . | nindent 8 }}
         app.name: {{ include "aws-thanosql.fullname" . }}-lab
     spec:
+      tolerations:
+      - key: "type"
+        operator: "Equal"
+        value: "workspace"
+        effect: "NoSchedule"
       dnsPolicy: Default
       securityContext:
         runAsUser: 0
@@ -50,7 +55,7 @@ spec:
       - name: init-permissions
         image: busybox
         command: ['sh', '-c']
-        args: ['chown 1000 /data']
+        args: ['chown 1000 /data; mkdir -p /data/.cache/huggingface; chown 1000:100 /data/.cache; chown 999:100 /data/.cache/huggingface']
         volumeMounts:
         - name: {{ include "aws-thanosql.fullname" . }}-volume
           mountPath: /data
