@@ -22,7 +22,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: {{ .Values.image.command | indent 4 }}
           envFrom:
             - configMapRef:
                 name: {{ include "file-manager.fullname" . }}
