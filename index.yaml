@@ -3,7 +3,17 @@ entries:
   aws-thanosql:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.429106904Z"
+    created: "2024-06-12T07:47:40.017326524Z"
+    description: A Helm chart for the AWS ThanoSQL Workspace
+    digest: 7e0fcbd5399407d1092172cdd2e27cec670ff133af6c647cfaff075d10effe7e
+    name: aws-thanosql
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/aws-thanosql-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-06-12T07:47:40.017020311Z"
     description: A Helm chart for the AWS ThanoSQL Workspace
     digest: 9109c9af242324216c12240b6fe939dc73ff80dabe984884cb026744cea8238d
     name: aws-thanosql
@@ -13,7 +23,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.428782586Z"
+    created: "2024-06-12T07:47:40.016699431Z"
     description: A Helm chart for the AWS ThanoSQL Workspace
     digest: 12e25f90d02d71bc521d9bebc3372fd811d7ffbb9e250c7f647d652ecd3be0c9
     name: aws-thanosql
@@ -23,7 +33,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.428443331Z"
+    created: "2024-06-12T07:47:40.016375505Z"
     description: A Helm chart for the AWS ThanoSQL Workspace
     digest: f4937ce1bcadfd7cc4e081bc1c3a9c294f6c573df9da5d4f5914e9b5d1ba3bc2
     name: aws-thanosql
@@ -33,7 +43,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.428140484Z"
+    created: "2024-06-12T07:47:40.016058021Z"
     description: A Helm chart for the AWS ThanoSQL Workspace
     digest: 11fa21d1dc02a3b6381ff02832ffe9026880d37ad5219b03eb16954eeb53b1ba
     name: aws-thanosql
@@ -43,7 +53,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.427817208Z"
+    created: "2024-06-12T07:47:40.015728645Z"
     description: A Helm chart for the AWS ThanoSQL Workspace
     digest: c4cd4da2bc59f2e600c77d667dfd82a1574a2ae55580fa3da2179e90b98abdc8
     name: aws-thanosql
@@ -53,7 +63,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.42748212Z"
+    created: "2024-06-12T07:47:40.015406192Z"
     description: A Helm chart for the AWS ThanoSQL Workspace
     digest: bab4285ea8a6ff59c5426c5affa60b9595d6b2548872ceddef978099b2077c8f
     name: aws-thanosql
@@ -63,7 +73,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.427107378Z"
+    created: "2024-06-12T07:47:40.01504676Z"
     description: A Helm chart for the AWS ThanoSQL Workspace
     digest: 7476817656822f349d5b0a17eb0dac6115a5e5da3add594ebbf33a6a60bcfe1f
     name: aws-thanosql
@@ -73,7 +83,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.42678252Z"
+    created: "2024-06-12T07:47:40.014696505Z"
     description: A Helm chart for the AWS ThanoSQL Workspace
     digest: 1bba47bf4b78e753905c4ad4fcb790b00cfb38b7faaafb87dce792c2627d7418
     name: aws-thanosql
@@ -84,9 +94,9 @@ entries:
   ecr-secret:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.429288534Z"
+    created: "2024-06-12T07:47:40.017515828Z"
     description: A Helm chart for Kubernetes
-    digest: 06e4f1adb3304df909fd71625bcadea571fae3e3206b91c509ea16bc2e3dd71a
+    digest: eb44aa867dd5298d84346b2fe57b5f9f28bbda743eef8b2d0b3c57c4325b2363
     name: ecr-secret
     type: application
     urls:
@@ -95,7 +105,7 @@ entries:
   file-manager:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.429960894Z"
+    created: "2024-06-12T07:47:40.018965095Z"
     description: A Helm chart for Kubernetes
     digest: 912f66d1ce5c9fdd99c1e7cae2648f594179e8ac6b7591778a88bb2f768f54a0
     name: file-manager
@@ -105,7 +115,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.429724641Z"
+    created: "2024-06-12T07:47:40.018248668Z"
     description: A Helm chart for Kubernetes
     digest: 8348bcbb89882b0be10f5c03c5d613cd52a140ab6d3906b95ff937c02f026001
     name: file-manager
@@ -115,9 +125,9 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.429490232Z"
+    created: "2024-06-12T07:47:40.017729958Z"
     description: A Helm chart for Kubernetes
-    digest: be2195c4be6594231422dfe8d71784a1787548d2df6676d7698c3ed6f2c3c032
+    digest: 59e285aa4b2374f4d4c81643ed70058e81fded47d451f3963ea39333ee27743c
     name: file-manager
     type: application
     urls:
@@ -126,9 +136,9 @@ entries:
   thanosql-engine:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.430164756Z"
+    created: "2024-06-12T07:47:40.019265878Z"
     description: A Helm Chart for ThanoSQL Engine
-    digest: a8ddf5a7e649dd61937c3b14556826aab59adb91c05bda885017c98164b5968f
+    digest: 0a5e6cfb317a78ab091e4b17d9016cffcc9d30e2f9d4bfb5a82b31988aec65c8
     name: thanosql-engine
     type: application
     urls:
@@ -137,12 +147,12 @@ entries:
   thanosql-engine-async:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-12T07:44:01.43037553Z"
+    created: "2024-06-12T07:47:40.019526115Z"
     description: A Helm chart for Kubernetes
-    digest: a10946d3a6238aaf714c25f08fef2a10ad1b23c8e63e3ecb55f629b8bdd60756
+    digest: 241d92948314f8ca80c2abfe745a92acb617aaa7db4fa56f3e85e4e882df761f
     name: thanosql-engine-async
     type: application
     urls:
     - https://raw.githubusercontent.com/smartmind-team/helm-chart/gh-pages/thanosql-engine-async-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-12T07:44:01.426164853Z"
+generated: "2024-06-12T07:47:40.014185218Z"
