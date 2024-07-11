@@ -70,7 +70,7 @@ spec:
             wget https://raw.githubusercontent.com/smartmind-team/mintlify-docs/main/examples/Image_Retrieval.ipynb; 
             wget https://raw.githubusercontent.com/smartmind-team/mintlify-docs/main/examples/Review_Analytics.ipynb; 
             chown 1000:100 -R /data/examples
-          volumeMounts:
+        volumeMounts:
         - name: {{ include "aws-thanosql.fullname" . }}-volume
           mountPath: /data
       volumes: 
