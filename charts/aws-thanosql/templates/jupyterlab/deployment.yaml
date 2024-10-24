@@ -63,8 +63,9 @@ spec:
             setfacl -d -m g::rwx /data;
             setfacl -d -m o::rx /data;
             mkdir -p /data/.cache/huggingface; 
-            chown 1000:100 /data/.cache; 
-            chown 999:100 /data/.cache/huggingface; 
+            chown -R 1000:100 /data; 
+            chown 999:100 /data/.cache/huggingface;
+            chown 999:0 /data/data;  
             mkdir /data/examples; cd /data/examples; 
             wget https://raw.githubusercontent.com/smartmind-team/mintlify-docs/main/examples/AICC_Scenario.ipynb; 
             wget https://raw.githubusercontent.com/smartmind-team/mintlify-docs/main/examples/Image_Retrieval.ipynb; 
